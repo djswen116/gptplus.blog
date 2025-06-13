@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+.product-price {
+                margin-bottom: 10px;
+            }<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -108,16 +110,35 @@
         }
 
         .product-price {
-            font-size: 4rem;
-            font-weight: 800;
             margin-bottom: 15px;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
             position: relative;
             z-index: 2;
+        }
+
+        .price-prefix {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .price-amount {
+            font-size: 4.5rem;
+            font-weight: 800;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
             background: linear-gradient(45deg, #ffffff, #e6f2ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1;
+        }
+
+        .price-suffix {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 5px;
         }
 
         .product-period {
@@ -418,15 +439,23 @@
                 margin-bottom: 15px;
             }
 
-            .product-price {
-                font-size: 2.2rem;
-                margin-bottom: 10px;
+            .price-amount {
+                font-size: 2.8rem;
+            }
+
+            .price-prefix,
+            .price-suffix {
+                font-size: 1rem;
             }
 
             .product-period {
                 font-size: 0.9rem;
                 margin-bottom: 20px;
                 line-height: 1.4;
+            }
+
+            .product-price {
+                margin-bottom: 10px;
             }
 
             .guarantee-section,
@@ -555,12 +584,21 @@
                 font-size: 1.8rem;
             }
 
-            .product-price {
-                font-size: 2.8rem;
+            .price-amount {
+                font-size: 3.5rem;
+            }
+
+            .price-prefix,
+            .price-suffix {
+                font-size: 1.1rem;
             }
 
             .product-period {
                 font-size: 1rem;
+            }
+
+            .product-price {
+                margin-bottom: 12px;
             }
 
             .guarantee-section,
@@ -628,7 +666,11 @@
             <div class="product-section">
                 <div class="product-badge">✨ 靠谱给力</div>
                 <h2 class="product-title">官网ChatGpt Plus 会员</h2>
-                <div class="product-price">仅需¥140一个月</div>
+                <div class="product-price">
+                    <span class="price-prefix">仅需</span>
+                    <div class="price-amount">¥140</div>
+                    <span class="price-suffix">一个月</span>
+                </div>
                 <div class="product-period">客服V：lisuwen116【添加备注：gpt代充】</div>
             </div>
 
@@ -678,7 +720,7 @@
             <!-- 操作流程视频 -->
             <div class="video-section">
                 <h3 class="video-title">📹 操作流程视频教程</h3>
-                <a href="https://video-sh.cloudvideocdn.taobao.com/73bbe9f95b148212/c3deacc6f692e04c/20250404_8be5b5f781d3f9ba_514196921671_255715972792866_published_mp4_264_hd_taobao.mp4?auth_key=1749835502-0-0-c09712fb48f595762f1441d307e0461e&biz=tbs_vsucai-751f46a1728c0e07&t=2150417417498328028276437e0fe4&b=tbs_vsucai&p=cloudvideo_http_tb_seller_vsucai_publish" class="video-btn" target="_blank">
+                <a href="http://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/514196921671.mp4" class="video-btn" target="_blank">
                     <span class="video-icon">▶️</span>
                     观看详细操作流程
                 </a>
