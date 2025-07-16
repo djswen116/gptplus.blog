@@ -149,33 +149,10 @@
             z-index: 2;
             font-weight: 500;
         }
-        
-        /* --- NEW CSS RULES FOR QR CODE --- */
-        .qr-code-wrapper {
-            width: 170px;
-            height: 170px;
-            margin: 20px auto 0;
-            padding: 10px; /* 为二维码提供一个安全的白色边框（静区） */
-            background-color: white; /* 确保二维码背景是纯白，提升识别率 */
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-        }
-
-        .qr-code-wrapper img {
-            display: block;
-            width: 100%;
-            height: auto; /* 自动高度以保持比例 */
-            /* 关键：强制浏览器保持像素清晰，不对二维码进行模糊处理 */
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            image-rendering: pixelated;
-        }
-        /* --- END OF NEW CSS RULES --- */
 
         .product-note {
             font-size: 1rem;
             opacity: 0.9;
-            margin-top: 15px; 
             margin-bottom: 30px;
             position: relative;
             z-index: 2;
@@ -425,11 +402,6 @@
             .product-section {
                 padding: 30px 20px;
             }
-            
-            .qr-code-wrapper {
-                width: 150px;
-                height: 150px;
-            }
 
             .product-badge {
                 font-size: 0.9rem;
@@ -466,7 +438,6 @@
 
             .product-note {
                 font-size: 0.8rem;
-                margin-top: 10px; 
                 margin-bottom: 20px;
                 line-height: 1.3;
             }
@@ -673,9 +644,9 @@
                     <span class="price-suffix">包售后</span>
                 </div>
                 <div class="product-period">客服V：hyzw1001【添加备注：gpt代充】</div>
-
                 <div class="product-note">（已有号的可以24小时自助充，如没有号可以买个普号再充）</div>
             </div>
+
             <div class="purchase-section">
                 <h3 class="purchase-title">💳 先买卡密再进代充系统</h3>
                 <div class="purchase-options">
@@ -735,4 +706,11 @@
                 <p>专注Gpt Plus代充服务</p>
             </div>
             <div class="feature-card">
-                <span class="feature-icon
+                <span class="feature-icon">💎</span>
+                <h4>品质保障</h4>
+                <p>高质量服务，用户好评</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
