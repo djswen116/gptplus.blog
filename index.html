@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
+            background: linear-gradient(135deg, #2a5a49 0%, #1e3c32 100%);
             min-height: 100vh;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
@@ -58,7 +58,7 @@
 
         /* 产品展示区 */
         .product-section {
-            background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
+            background: linear-gradient(135deg, #3d8b6b 0%, #2a5a49 100%);
             color: white;
             padding: 60px 40px;
             text-align: center;
@@ -128,7 +128,7 @@
             font-size: 4.5rem;
             font-weight: 800;
             text-shadow: 0 2px 15px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #ffffff, #e6f2ff);
+            background: linear-gradient(45deg, #ffffff, #e0f2e9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -168,7 +168,7 @@
 
         .purchase-title {
             font-size: 1.8rem;
-            color: #1d1d1f;
+            color: #1e293b;
             text-align: center;
             margin-bottom: 40px;
             font-weight: 700;
@@ -211,12 +211,12 @@
         }
 
         .purchase-btn.primary {
-            background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
+            background: linear-gradient(135deg, #3d8b6b 0%, #2a5a49 100%);
             color: white;
         }
 
         .purchase-btn.secondary {
-            background: linear-gradient(135deg, #4da6ff 0%, #007aff 100%);
+            background: linear-gradient(135deg, #6ab996 0%, #3d8b6b 100%);
             color: white;
         }
 
@@ -241,11 +241,34 @@
             z-index: 2;
             font-weight: 500;
         }
+        
+        /* 视频教程区域 */
+        .video-section {
+            padding: 50px 40px;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .video-title {
+            font-size: 1.8rem;
+            color: #1e3c32;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .embedded-video {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(42,90,73,0.2);
+            background-color: #000;
+        }
 
         /* 保障信息 */
         .guarantee-section {
             padding: 50px 40px;
-            background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+            background: linear-gradient(135deg, #f0f5f3 0%, #e0f2e9 100%);
         }
 
         .guarantee-title {
@@ -269,15 +292,15 @@
             padding: 25px;
             background: white;
             border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0,122,255,0.08);
+            box-shadow: 0 8px 25px rgba(42,90,73,0.08);
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(0,122,255,0.1);
+            border: 1px solid rgba(42,90,73,0.1);
         }
 
         .guarantee-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0,122,255,0.15);
-            border-color: #007aff;
+            box-shadow: 0 12px 30px rgba(42,90,73,0.15);
+            border-color: #3d8b6b;
         }
 
         .guarantee-icon {
@@ -305,63 +328,6 @@
             font-weight: 400;
         }
 
-        /* 视频教程区域 */
-        .video-section {
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #cce7ff 0%, #99d6ff 100%);
-            text-align: center;
-        }
-
-        .video-title {
-            font-size: 1.8rem;
-            color: #0051d5;
-            margin-bottom: 25px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .video-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
-            color: white;
-            padding: 18px 35px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 8px 25px rgba(0,122,255,0.3);
-            position: relative;
-            overflow: hidden;
-            letter-spacing: -0.3px;
-        }
-
-        .video-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .video-btn:hover::before {
-            left: 100%;
-        }
-
-        .video-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0,122,255,0.4);
-            background: linear-gradient(135deg, #0051d5 0%, #003d99 100%);
-        }
-
-        .video-icon {
-            font-size: 1.3rem;
-            margin-right: 10px;
-        }
-
         /* 底部特色 */
         .features {
             display: grid;
@@ -374,16 +340,16 @@
             padding: 35px 25px;
             border-radius: 18px;
             text-align: center;
-            box-shadow: 0 12px 30px rgba(0,122,255,0.15);
+            box-shadow: 0 12px 30px rgba(42,90,73,0.15);
             backdrop-filter: blur(15px);
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(0,122,255,0.2);
+            border: 1px solid rgba(42,90,73,0.2);
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,122,255,0.2);
-            border-color: #007aff;
+            box-shadow: 0 20px 40px rgba(42,90,73,0.2);
+            border-color: #3d8b6b;
         }
 
         .feature-icon {
@@ -533,17 +499,6 @@
                 font-size: 0.9rem;
             }
 
-            .video-btn {
-                padding: 14px 25px;
-                font-size: 1rem;
-                border-radius: 20px;
-            }
-
-            .video-icon {
-                font-size: 1.1rem;
-                margin-right: 8px;
-            }
-
             .features {
                 grid-template-columns: 1fr;
                 gap: 15px;
@@ -653,8 +608,7 @@
 
         /* 触摸优化 */
         @media (max-width: 768px) {
-            .purchase-btn,
-            .video-btn {
+            .purchase-btn {
                 -webkit-tap-highlight-color: transparent;
                 user-select: none;
                 -webkit-user-select: none;
@@ -662,8 +616,7 @@
                 -ms-user-select: none;
             }
 
-            .purchase-btn:active,
-            .video-btn:active {
+            .purchase-btn:active {
                 transform: scale(0.98);
             }
 
@@ -676,32 +629,28 @@
 </head>
 <body>
     <div class="container">
-        <!-- 头部 -->
         <header class="header">
             <h1>🚀 ChatGpt Plus 代充</h1>
             <div class="subtitle">专业 • 安全 • 保障</div>
         </header>
 
-        <!-- 主要内容 -->
         <div class="main-content">
-            <!-- 产品展示 -->
             <div class="product-section">
                 <div class="product-badge">✨ 靠谱给力</div>
                 <h2 class="product-title">官网ChatGpt Plus 会员</h2>
                 <div class="product-price">
-                    <span class="price-prefix">仅需</span>
-                    <div class="price-amount">¥130</div>
-                    <span class="price-suffix">一个月</span>
+                    <span class="price-prefix">一个月</span>
+                    <div class="price-amount">¥140</div>
+                    <span class="price-suffix">包售后</span>
                 </div>
-                <div class="product-period">客服V：lisuwen116【添加备注：gpt代充】</div>
-                <div class="product-note">（已有号的可以24小时自助充，需要成品号的需要私下客服）</div>
+                <div class="product-period">客服V：hyzw1001【添加备注：gpt代充】</div>
+                <div class="product-note">（已有号的可以24小时自助充，如没有号可以买个普号再充）</div>
             </div>
 
-            <!-- 购买选项 -->
             <div class="purchase-section">
                 <h3 class="purchase-title">💳 先买卡密再进代充系统</h3>
                 <div class="purchase-options">
-                    <a href="https://yo.i6ls.com//links/687593ED" class="purchase-btn secondary" target="_blank">
+                    <a href="https://yo.i6ls.com//links/FFA8A40C" class="purchase-btn secondary" target="_blank">
                         <h3>🎫 卡密自助购买</h3>
                         <p>即买即用，自动发货</p>
                     </a>
@@ -711,8 +660,12 @@
                     </a>
                 </div>
             </div>
+            
+            <div class="video-section">
+                <h3 class="video-title">📹 操作流程视频教程</h3>
+                <video class="embedded-video" src="http://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/514196921671.mp4" controls playsinline></video>
+            </div>
 
-            <!-- 服务保障 -->
             <div class="guarantee-section">
                 <h3 class="guarantee-title">🛡️ 服务保障</h3>
                 <div class="guarantee-list">
@@ -720,14 +673,14 @@
                         <div class="guarantee-icon">🔒</div>
                         <div class="guarantee-text">
                             <h4>正规渠道</h4>
-                            <p>正规渠道代充，账户安全有保障</p>
+                            <p>低汇率国家ios充值，账户安全有保障</p>
                         </div>
                     </div>
                     <div class="guarantee-item">
                         <div class="guarantee-icon">💰</div>
                         <div class="guarantee-text">
-                            <h4>封号退费</h4>
-                            <p>如遇封号情况，按剩余天数比例退费</p>
+                            <h4>强力保障</h4>
+                            <p>因充值0%封号，封号不问理由按天售后</p>
                         </div>
                     </div>
                     <div class="guarantee-item">
@@ -739,18 +692,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- 操作流程视频 -->
-            <div class="video-section">
-                <h3 class="video-title">📹 操作流程视频教程</h3>
-                <a href="http://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/514196921671.mp4" class="video-btn" target="_blank">
-                    <span class="video-icon">▶️</span>
-                    观看详细操作流程
-                </a>
-            </div>
         </div>
 
-        <!-- 底部特色 -->
         <div class="features">
             <div class="feature-card">
                 <span class="feature-icon">⭐</span>
