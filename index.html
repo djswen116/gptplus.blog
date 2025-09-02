@@ -717,13 +717,63 @@
                 -webkit-overflow-scrolling: touch;
             }
         }
+        
+        /* 新增：弹窗样式 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .modal-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            max-width: 90%;
+            width: 450px;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.visible .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-content .message {
+           color: #333;
+           font-size: 1.1rem;
+           line-height: 1.6;
+           margin: 0;
+        }
+        .modal-content .timer-text {
+           color: #666;
+           font-size: 1rem;
+           margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <h1>🚀 ChatGpt Plus 代充</h1>
-            <div class="subtitle">专业 • 安全 • 保障</div>
+            <div class="subtitle">专业 • 安全 • 保障<br>请牢记我们的网址：gptplus.blog 防失联</div>
         </header>
 
         <div class="main-content">
@@ -735,10 +785,11 @@
                     <div class="price-amount">¥130</div>
                     <span class="price-suffix">一个月</span>
                 </div>
-                <a href="https://gptplus.blog/help" class="help-btn" target="_blank" rel="noopener noreferrer">📖点击打开使用帮助</a>
+                <a href="https://gptplus.blog/help" class="help-btn" target="_blank" rel="noopener noreferrer">📖打开使用帮助&联系方式</a>
                 <div class="product-period">
-                    <p>客服微信82765536（QQ同号，若提示频繁请用QQ加！）【备注：Gpt代充】</p>
-                    <p>可接Grok的代充和成品号业务，详情找客服！</p>
+                    <p>客服QQ:82765536【备注：Gpt代充】</p>
+                    <p>微信同号，防频繁，通过慢！【急事请Q】</p>
+                    <p>备用QQ：13079809</p>
                 </div>
             </div>
 
@@ -749,7 +800,7 @@
                         <h3>🎫 卡密自助购买</h3>
                         <p>即买即发，自动发货</p>
                     </a>
-                    <a href="https://gptplus.biz/recharge" class="purchase-btn primary" target="_blank" rel="noopener noreferrer">
+                    <a href="https://gptplus.biz/recharge" class="purchase-btn primary" rel="noopener noreferrer">
                         <h3>🤖 24小时代充系统</h3>
                         <p>先买卡密，再进代充</p>
                     </a>
@@ -791,7 +842,7 @@
                 </div>
             </div>
             
-       <div class="video-section" id="video">
+            <div class="video-section" id="video">
                 <h3 class="video-title">🎬 操作流程</h3>
                 <div class="video-container">
                     <video
@@ -799,7 +850,7 @@
                         controls
                         title="GPT Plus代充操作视频教程"
                         poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter' font-size='24' fill='%236b7280'%3E视频教程%3C/text%3E%3C/svg%3E">
-                        <source src="http://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/528377207904.mp4" type="video/mp4">
+                        <source src="http://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/530609675156.mp4" type="video/mp4">
                         您的浏览器不支持视频播放
                     </video>
                 </div>
@@ -824,5 +875,64 @@
             </div>
         </div>
     </div>
+    
+    <div id="custom-alert-modal" class="modal-overlay">
+      <div class="modal-content">
+        <p class="message">偶遇充值失败或卡住，是太多人同时用通道拥挤，多点几次或晚点再试（提示会员的等会员到期再充），有问题随时联系客服处理（15小时人工在线：9:00-24:00）</p>
+        <p class="timer-text">将在 <strong id="modal-timer">10</strong> 秒后进入代充系统...</p>
+      </div>
+    </div>
+
+    <script>
+        // 等待DOM完全加载后执行脚本
+        document.addEventListener('DOMContentLoaded', function() {
+    
+            // 通过链接地址精确选择“24小时代充系统”按钮
+            const rechargeLink = document.querySelector('a[href="https://gptplus.biz/recharge"]');
+    
+            // 获取弹窗和计时器元素
+            const modal = document.getElementById('custom-alert-modal');
+            const timerSpan = document.getElementById('modal-timer');
+    
+            // 确保按钮存在，以防万一
+            if (rechargeLink) {
+                // 为按钮添加点击事件监听器
+                rechargeLink.addEventListener('click', function(event) {
+                    
+                    // 1. 阻止链接的默认跳转行为
+                    event.preventDefault();
+                    
+                    const destinationUrl = this.href;
+    
+                    // 2. 显示弹窗
+                    if (modal) {
+                        modal.classList.add('visible');
+                    }
+    
+                    let timeLeft = 10; // 倒计时10秒
+                    if (timerSpan) {
+                       timerSpan.textContent = timeLeft;
+                    }
+    
+                    // 3. 启动计时器，每秒更新显示的数字
+                    const countdownInterval = setInterval(() => {
+                        timeLeft--;
+                        if (timerSpan) {
+                            timerSpan.textContent = timeLeft;
+                        }
+                        // 倒计时结束后清除计时器
+                        if (timeLeft <= 0) {
+                            clearInterval(countdownInterval);
+                        }
+                    }, 1000);
+    
+                    // 4. 设置一个10秒后执行的延时操作，用于跳转
+                    setTimeout(() => {
+                        window.location.href = destinationUrl;
+                    }, 10000); // 10000毫秒 = 10秒
+                });
+            }
+        });
+    </script>
 </body>
 </html>
